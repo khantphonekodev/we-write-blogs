@@ -152,10 +152,10 @@ const StyledBlogs = styled.div`
   @media (min-width: 500px) {
     grid-template-columns: 1fr 1fr;
   }
-  @media (min-width: 900px) {
+  @media (min-width: 800px) {
     grid-template-columns: 1fr 1fr 1fr;
   }
-  @media (min-width: 1170px) {
+  @media (min-width: 1400px) {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
   @media (min-width: 1900px) {

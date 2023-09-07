@@ -5,6 +5,7 @@ import { styled } from "styled-components";
 import { useOutsideClick } from "../hooks/useOutsideClick";
 
 const StyledModal = styled.div`
+  width: 80%;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -61,7 +62,7 @@ function Content({ children, value }) {
         {cloneElement(children, { onCloseModal: () => closeModal() })}
       </StyledModal>
     </StyledOverlay>,
-    document.body
+    document.querySelector("#modal")
   );
 }
 

@@ -5,19 +5,18 @@ import { styled } from "styled-components";
 import SideBar from "./SideBar";
 
 const App = styled.div`
-  width: inherit;
-  min-height: 100dvh;
   background-color: var(--white);
 `;
 
 const StyledAppLayout = styled.div`
-  min-height: 100vh;
-  width: inherit;
   display: grid;
-  grid-template-columns: 1fr 26rem;
-  grid-template-rows: auto 1fr auto auto;
+
   padding: 20px;
-  row-gap: 1.4rem;
+  grid-template-rows: auto 1fr auto auto;
+  gap: 1.4rem;
+  @media (min-width: 1170px) {
+    grid-template-columns: 1fr 26rem;
+  }
 `;
 
 const StyledMain = styled.div`

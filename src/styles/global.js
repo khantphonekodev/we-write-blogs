@@ -14,16 +14,18 @@ export const GlobalStyles = createGlobalStyle`
     width: 0px;
     background: transparent; /* make scrollbar transparent */
 }
-
+* {
+    margin : 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 html {
     font-family: 'Poppins', sans-serif;
-    color : #3F2305;
-    
+    color : #3F2305;   
 }
 body {
-    width: 100vw;
-     position: absolute;
-       
+   min-height: 100dvh;   
+   width   :100%;
 }
 
 button {
@@ -42,10 +44,8 @@ a{
 li{
     list-style-type:none;
 }
-* {
-    margin : 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+
+
+
 
 `;

@@ -9,6 +9,7 @@ const StyledRecentsContainer = styled.div`
   flex-wrap: wrap;
   gap: 0.4rem;
   margin-top: 20px;
+  overflow-y: scroll;
 `;
 
 function BlogCategoires() {

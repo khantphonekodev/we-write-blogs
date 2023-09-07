@@ -14,7 +14,7 @@ export function useSignup() {
       navigate("/", { replace: true });
     },
 
-    onError: (err) => {
+    onError: () => {
       // console.log("hello error");
       // console.log("ERROR", err.message);
       toast.error("There is an error in creating new error");

@@ -1,1 +1,1 @@
-export const PagePerItems = 4;
+export const PagePerItems = 12;

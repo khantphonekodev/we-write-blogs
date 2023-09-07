@@ -17,13 +17,14 @@ const StyledForm = styled.form`
   box-shadow: -6px 7px 9px -7px rgba(0, 0, 0, 0.75);
   background-color: var(--gray);
   border-radius: 5px;
+  padding: 40px 30px;
   ${(props) =>
     props.type === "modal" &&
     css`
-      width: 80rem;
+      padding: 20px;
     `};
+
   margin: 0 auto;
-  padding: 40px 30px;
   gap: 1.6rem;
 `;
 
@@ -43,7 +44,7 @@ const Select = styled.select`
 `;
 
 function CreateBlogForm({ type = "normal", blog = {} }) {
-  const { categories = [] } = useGetCategories();
+  /* const { categories = [] } = useGetCategories(); */
   const { mutateCreateBlog, isCreatingBlog } = useCreateBlog();
   const { mutateUpdateBlog, isUpdatingBlog } = useUpdateBlog();
 
@@ -99,8 +100,11 @@ function CreateBlogForm({ type = "normal", blog = {} }) {
         />
       </FormRow>
 
-      <FormRow label="Cateogry" error={errors?.category?.message}>
-        <Select
+      <FormRow
+        label="Cateogry (**capitalzie each first letter eg. Technology,Business **)"
+        error={errors?.category?.message}
+      >
+        {/* <Select
           name="categroy"
           defaultValue={categories[0]}
           {...register("category", {
@@ -112,7 +116,14 @@ function CreateBlogForm({ type = "normal", blog = {} }) {
               {category}
             </option>
           ))}
-        </Select>
+        </Select> */}
+
+        <StyledInput
+          name="categroy"
+          {...register("category", {
+            required: "Category field is required to create blog",
+          })}
+        />
       </FormRow>
 
       <FormRow label="Cover Image" error={errors?.image?.message}>

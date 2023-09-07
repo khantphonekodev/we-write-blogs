@@ -4,6 +4,7 @@ import { StyledHeading } from "../ui/Heading";
 import { Small } from "../ui/Small";
 import { Link } from "react-router-dom";
 
+import { formatTimestampRelativeToNow } from "../utils/FormatDate";
 /* eslint-disable react/prop-types */
 const StyledContainer = styled.div`
   /* display: flex;
@@ -37,7 +38,9 @@ function SingleRecent({ blog }) {
         <StyledContentContainer>
           <Small color="#102C57">{blog.category}</Small>
           <StyledHeading as="h5">{blog.intro}</StyledHeading>
-          <Small color="#2A2F4F">{blog.created_at}</Small>
+          <Small color="#2A2F4F">
+            {formatTimestampRelativeToNow(blog.created_at)}
+          </Small>
         </StyledContentContainer>
       </StyledContainer>
     </Link>

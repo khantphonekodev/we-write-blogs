@@ -4,6 +4,7 @@ import { StyledHeading } from "../ui/Heading";
 import { StyledImg } from "../ui/Image";
 import { Small } from "../ui/Small";
 import { Link, useNavigate } from "react-router-dom";
+import { formatTimestampRelativeToNow } from "../utils/FormatDate";
 
 const StyledSingleBlog = styled.div`
   display: grid;
@@ -33,6 +34,12 @@ const ImageContainer = styled.div`
   margin: 0 auto;
 `;
 
+const Div = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
 function SingleBlog({ blog }) {
   const navigate = useNavigate();
   return (
@@ -42,10 +49,15 @@ function SingleBlog({ blog }) {
       </ImageContainer>
       <StyledTexts>
         <StyledHeading as="h5">{blog.title}</StyledHeading>
-        <Small size="13px">{blog.intro}</Small>
-        <Link to={`/blogs/${blog.id}`}>
-          <Small color="blue">Read More</Small>
-        </Link>
+        <Small size="14px">{blog.intro}</Small>
+        <Div>
+          <Link to={`/blogs/${blog.id}`}>
+            <Small color="blue">Read More</Small>
+          </Link>
+          <Small color="#2A2F4F" size="10px">
+            {formatTimestampRelativeToNow(blog.created_at)}
+          </Small>
+        </Div>
       </StyledTexts>
     </StyledSingleBlog>
   );

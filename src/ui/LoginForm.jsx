@@ -10,7 +10,6 @@ const StyledForm = styled.form`
   background-color: var(--gray);
   border-radius: 20px;
   display: flex;
-  min-width: 350px;
 
   flex-direction: column;
   gap: 1.6rem;
